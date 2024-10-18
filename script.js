@@ -12,6 +12,9 @@ const closeAnswerModal = document.getElementById('closeAnswerModal');
 const controls = document.getElementById('controls');
 const removedCardsContainer = document.getElementById('removedCardsContainer');
 
+
+let answerImage = document.getElementById('answerImage'); // Get the answer image element
+let questionImage = document.getElementById('questionImage'); // Get the question image element
 let flippedCard = null;
 
 // Add event listeners to all cards
@@ -69,9 +72,18 @@ function shuffledCards() {
 // Show question modal
 function showQuestion() {
     if (flippedCard) {
-        const question = flippedCard.getAttribute('data-question');
-        questionText.innerText = question;
+        // const question = flippedCard.getAttribute('data-question');
+        const imageRef = flippedCard.getAttribute('image1-ref'); // Get the image reference(weird)
+        // questionText.innerText = question;
         questionModal.classList.add('show'); // Show the modal
+
+        if (imageRef) { // Check if there's an image reference
+            questionImage.src = imageRef; // Set the image source based on the attribute
+            questionImage.classList.remove('hidden-image'); // Make the image visible
+            questionImage.classList.add('visible-image');   // Add visible class
+        } else {
+            questionImage.classList.add('hidden-image'); // Hide the image if no reference
+        }
     }
 }
 
@@ -79,8 +91,18 @@ function showQuestion() {
 function showAnswer() {
     if (flippedCard) {
         const answer = flippedCard.getAttribute('data-answer');
+        const imageRef = flippedCard.getAttribute('image2-ref'); // Get the image reference
         answerText.innerText = answer;
-        answerModal.classList.add('show'); // Show the modal
+        answerModal.classList.remove('hidden'); // Show the modal by removing 'hidden' class
+        answerModal.classList.add('show'); // Add 'show' class to display the modal
+
+        if (imageRef) { // Check if there's an image reference
+            answerImage.src = imageRef; // Set the image source based on the attribute
+            answerImage.classList.remove('hidden-image'); // Make the image visible
+            answerImage.classList.add('visible-image');   // Add visible class
+        } else {
+            answerImage.classList.add('hidden-image'); // Hide the image if no reference
+        }
     }
 }
 

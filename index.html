@@ -8,16 +8,26 @@
 </head>
 <body>
     <div id="game">
-        <div class="card" data-framework="Card 1" data-question="What is the capital of France?" data-answer="Paris"></div>
-        <div class="card" data-framework="Card 2" data-question="What is 2 + 2?" data-answer="4"></div>
-        <div class="card" data-framework="Card 3" data-question="Who wrote '1984'?" data-answer="George Orwell"></div>
-        <div class="card" data-framework="Card 4" data-question="What is the speed of light?" data-answer="299,792 km/s"></div>
-        <div class="card" data-framework="Card 5" data-question="Who is the founder of Microsoft?" data-answer="Bill Gates"></div>
-        <div class="card" data-framework="Card 6" data-question="What is the largest ocean?" data-answer="Pacific Ocean"></div>
-        <div class="card" data-framework="Card 7" data-question="What is the square root of 16?" data-answer="4"></div>
-        <div class="card" data-framework="Card 8" data-question="What year did World War II end?" data-answer="1945"></div>
-        <div class="card" data-framework="Card 9" data-question="What is the boiling point of water?" data-answer="100°C"></div>
-        <div class="card" data-framework="Card 10" data-question="Who painted the Mona Lisa?" data-answer="Leonardo da Vinci"></div>
+        <div class="card" image1-ref="Image/Question prompt/Q1.jpg" image2-ref="Image/Answer prompt/A1.jpg"data-framework="+50" data-question="" data-answer="">
+        </div>
+        <div class="card" image1-ref="Image/Question prompt/Q2.jpg" image2-ref="Image/Answer prompt/A2.jpg" data-framework="+50" data-question="" data-answer="">
+        </div>
+        <div class="card" image1-ref="Image/Question prompt/Q3.jpg" image2-ref="Image/Answer prompt/A3.jpg"data-framework="+100" data-question="" data-answer="">
+        </div>
+        <div class="card" image1-ref="Image/Question prompt/Q4.jpg" image2-ref="Image/Answer prompt/A4.jpg"data-framework="+150" data-question="" data-answer="">
+        </div>
+        <div class="card" image1-ref="Image/Question prompt/Q5.jpg" image2-ref="Image/Answer prompt/A5.jpg" data-framework="+200" data-question="" data-answer="">
+        </div>
+        <div class="card" image1-ref="Image/Question prompt/Q6.jpg" image2-ref="Image/Answer prompt/A6.jpg" data-framework="+200" data-question="" data-answer="">
+        </div>
+        <div class="card" image1-ref="Image/Question prompt/Q7.jpg" image2-ref="Image/Answer prompt/A7.jpg"data-framework="+200" data-question="" data-answer="">
+        </div>
+        <div class="card" image1-ref="Image/Question prompt/Q8.jpg" image2-ref="Image/Answer prompt/A8.jpg"data-framework="+300" data-question="" data-answer="">
+        </div>
+        <div class="card" image1-ref="Image/Question prompt/Q9.jpg" image2-ref="Image/Answer prompt/A9.jpg"data-framework="+350" data-question="" data-answer="">
+        </div>
+        <div class="card" image1-ref="Image/Question prompt/Q1.jpg" image2-ref="Image/Answer prompt/A1.jpg"data-framework="+50" data-question="What is the name of the company discussed today?" data-answer="Sony">
+        </div>
     </div>
     
     <!-- Control buttons -->
@@ -39,6 +49,7 @@
             <span id="closeQuestionModal" class="close">&times;</span>
             <h2>Question</h2>
             <p id="questionText"></p>
+            <img id="questionImage" class="hidden-image" alt="Question Image">
             <button id="showAnswerBtn">Show Answer</button> <!-- Moved here -->
         </div>
     </div>
@@ -49,8 +60,10 @@
             <span id="closeAnswerModal" class="close">&times;</span>
             <h2>Reference Answer</h2>
             <p id="answerText"></p>
+            <img id="answerImage" class="hidden-image" alt="Answer Image">
         </div>
     </div>
+    
 
     <script src="script.js"></script>
 </body>
