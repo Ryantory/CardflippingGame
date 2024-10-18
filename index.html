@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Flipping Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game">
+        <div class="card" data-framework="Card 1" data-question="What is the capital of France?" data-answer="Paris"></div>
+        <div class="card" data-framework="Card 2" data-question="What is 2 + 2?" data-answer="4"></div>
+        <div class="card" data-framework="Card 3" data-question="Who wrote '1984'?" data-answer="George Orwell"></div>
+        <div class="card" data-framework="Card 4" data-question="What is the speed of light?" data-answer="299,792 km/s"></div>
+        <div class="card" data-framework="Card 5" data-question="Who is the founder of Microsoft?" data-answer="Bill Gates"></div>
+        <div class="card" data-framework="Card 6" data-question="What is the largest ocean?" data-answer="Pacific Ocean"></div>
+        <div class="card" data-framework="Card 7" data-question="What is the square root of 16?" data-answer="4"></div>
+        <div class="card" data-framework="Card 8" data-question="What year did World War II end?" data-answer="1945"></div>
+        <div class="card" data-framework="Card 9" data-question="What is the boiling point of water?" data-answer="100°C"></div>
+        <div class="card" data-framework="Card 10" data-question="Who painted the Mona Lisa?" data-answer="Leonardo da Vinci"></div>
+    </div>
+    
+    <!-- Control buttons -->
+    <div id="controls" class="hidden">
+        <button id="doneBtn">Done</button>
+        <button id="undoBtn">Undo</button>
+        <button id="showQuestionBtn">See Question</button>
+    </div>
+
+    <!-- Removed cards section -->
+    <div id="removedCards" class="removed-cards">
+        <h2>Removed Cards</h2>
+        <div id="removedCardsContainer"></div>
+    </div>
+
+    <!-- Modal for displaying card question -->
+    <div id="questionModal" class="modal hidden">
+        <div class="modal-content">
+            <span id="closeQuestionModal" class="close">&times;</span>
+            <h2>Question</h2>
+            <p id="questionText"></p>
+            <button id="showAnswerBtn">Show Answer</button> <!-- Moved here -->
+        </div>
+    </div>
+    
+    <!-- Modal for displaying card answer -->
+    <div id="answerModal" class="modal hidden">
+        <div class="modal-content">
+            <span id="closeAnswerModal" class="close">&times;</span>
+            <h2>Reference Answer</h2>
+            <p id="answerText"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
