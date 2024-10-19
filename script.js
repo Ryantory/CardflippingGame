@@ -17,6 +17,8 @@ let answerImage = document.getElementById('answerImage'); // Get the answer imag
 let questionImage = document.getElementById('questionImage'); // Get the question image element
 let flippedCard = null;
 
+const music = document.getElementById('backgroundMusic');//Get the background music
+
 // Add event listeners to all cards
 cards.forEach(card => {
     card.addEventListener('click', () => {
@@ -77,6 +79,9 @@ function showQuestion() {
         // questionText.innerText = question;
         questionModal.classList.add('show'); // Show the modal
 
+        stopMusic();
+        playMusic("Backgroundmusic/Kahoot In Game Music (10 Second Count Down) 22.mp3");
+
         if (imageRef) { // Check if there's an image reference
             questionImage.src = imageRef; // Set the image source based on the attribute
             questionImage.classList.remove('hidden-image'); // Make the image visible
@@ -108,6 +113,8 @@ function showAnswer() {
 
 // Close question modal
 closeQuestionModal.addEventListener('click', () => {
+    stopMusic();
+    playMusic("Backgroundmusic/Crazy Frog - Axel F [No Copyright].mp3");
     questionModal.classList.remove('show');
 });
 
@@ -116,6 +123,16 @@ closeAnswerModal.addEventListener('click', () => {
     answerModal.classList.remove('show');
 });
 
+//play music
+function playMusic(track) {
+    music.src = track; // Set the audio source to the selected track
+    music.play();      // Play the audio
+  }
+//stop music
+  function stopMusic() {
+    music.pause();     // Pause the audio
+    music.currentTime = 0; // Reset the audio to the beginning
+  }
 // Attach event listeners for control buttons
 doneBtn.addEventListener('click', removeCard);
 undoBtn.addEventListener('click', undo);

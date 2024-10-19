@@ -8,6 +8,19 @@
 </head>
 <body>
     <div id="game">
+        <audio id="backgroundMusic" src="Backgroundmusic/Crazy Frog - Axel F [No Copyright].mp3" loop autoplay>
+            Your browser does not support the audio element.
+        </audio>
+        <script>
+            // Wait for the page to fully load before playing music
+            window.addEventListener('load', () => {
+              const music = document.getElementById('backgroundMusic');
+              music.play().catch(err => {
+                console.log('Autoplay was prevented by the browser:', err);
+                // Optionally handle the case where autoplay is blocked, such as by showing a play button
+              });
+            });
+          </script>
         <div class="card" image1-ref="image/Questionprompt/Q1.jpg" image2-ref="image/Answerprompt/A1.jpg"data-framework="+50" data-question="" data-answer="">
         </div>
         <div class="card" image1-ref="image/Questionprompt/Q2.jpg" image2-ref="image/Answerprompt/A2.jpg" data-framework="+50" data-question="" data-answer="">
