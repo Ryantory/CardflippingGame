@@ -80,7 +80,7 @@ function showQuestion() {
         questionModal.classList.add('show'); // Show the modal
 
         stopMusic();
-        playMusic("Backgroundmusic/Kahoot In Game Music (10 Second Count Down) 22.mp3");
+        playMusicFor10Seconds("Backgroundmusic/Kahoot In Game Music (10 Second Count Down) 22.mp3");
 
         if (imageRef) { // Check if there's an image reference
             questionImage.src = imageRef; // Set the image source based on the attribute
@@ -101,6 +101,8 @@ function showAnswer() {
         answerModal.classList.remove('hidden'); // Show the modal by removing 'hidden' class
         answerModal.classList.add('show'); // Add 'show' class to display the modal
 
+        stopMusic();
+        playMusic("Backgroundmusic/SUPER MARIO BROS. Themesong ( No Copyright Music ).mp3");
         if (imageRef) { // Check if there's an image reference
             answerImage.src = imageRef; // Set the image source based on the attribute
             answerImage.classList.remove('hidden-image'); // Make the image visible
@@ -133,6 +135,18 @@ function playMusic(track) {
     music.pause();     // Pause the audio
     music.currentTime = 0; // Reset the audio to the beginning
   }
+
+  function playMusicFor10Seconds(track) {
+    music.src = track;
+    music.play(); // Start the music
+
+    // Stop the music after 10 seconds (10000 milliseconds)
+    setTimeout(() => {
+      music.pause();
+      music.currentTime = 0; // Reset the music to the beginning (optional)
+    }, 13000);
+  }
+
 // Attach event listeners for control buttons
 doneBtn.addEventListener('click', removeCard);
 undoBtn.addEventListener('click', undo);
