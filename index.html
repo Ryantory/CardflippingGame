@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id = "columnArrangement">
+    <div id = "main">
     <div id="game">
-        <audio id="backgroundMusic" src="Backgroundmusic/Crazy Frog - Axel F [No Copyright].mp3" loop autoplay>
+        <audio id="backgroundMusic" currentMusic="0"></audio>
+        <!-- <audio id="backgroundMusic" src="Backgroundmusic/Crazy Frog - Axel F [No Copyright].mp3" loop autoplay>
             Your browser does not support the audio element.
         </audio>
         <script>
@@ -20,27 +23,29 @@
                 // Optionally handle the case where autoplay is blocked, such as by showing a play button
               });
             });
-          </script>
-        <div class="card" image1-ref="image/Questionprompt/Q1.jpg" image2-ref="image/Answerprompt/A1.jpg"data-framework="+50" data-question="" data-answer="">
+          </script> -->
+        <div class="card" image1-ref="image/Questionprompt/Q1.jpg" image2-ref="image/Answerprompt/A1.jpg"data-framework="+50" Qtime=5 data-answer="">
         </div>
-        <div class="card" image1-ref="image/Questionprompt/Q2.jpg" image2-ref="image/Answerprompt/A2.jpg" data-framework="+50" data-question="" data-answer="">
+        <div class="card" image1-ref="image/Questionprompt/Q2.jpg" image2-ref="image/Answerprompt/A2.jpg" data-framework="+50" Qtime=5 data-answer="">
         </div>
-        <div class="card" image1-ref="image/Questionprompt/Q3.jpg" image2-ref="image/Answerprompt/A3.jpg"data-framework="+100" data-question="" data-answer="">
+        <div class="card" image1-ref="image/Questionprompt/Q3.jpg" image2-ref="image/Answerprompt/A3.jpg"data-framework="+100" Qtime=5 data-answer="">
         </div>
-        <div class="card" image1-ref="image/Questionprompt/Q4.jpg" image2-ref="image/Answerprompt/A4.jpg"data-framework="+150" data-question="" data-answer="">
+        <div class="card" image1-ref="image/Questionprompt/Q4.jpg" image2-ref="image/Answerprompt/A4.jpg"data-framework="+150" Qtime=10 data-answer="">
         </div>
-        <div class="card" image1-ref="image/Questionprompt/Q5.jpg" image2-ref="image/Answerprompt/A5.jpg" data-framework="+200" data-question="" data-answer="">
+        <div class="card" image1-ref="image/Questionprompt/Q5.jpg" image2-ref="image/Answerprompt/A5.jpg" data-framework="+200" Qtime=10 data-answer="">
         </div>
-        <div class="card" image1-ref="image/Questionprompt/Q6.jpg" image2-ref="image/Answerprompt/A6.jpg" data-framework="+200" data-question="" data-answer="">
+        <div class="card" image1-ref="image/Questionprompt/Q6.jpg" image2-ref="image/Answerprompt/A6.jpg" data-framework="+200" Qtime=10 data-answer="">
         </div>
-        <div class="card" image1-ref="image/Questionprompt/Q7.jpg" image2-ref="image/Answerprompt/A7.jpg"data-framework="+200" data-question="" data-answer="">
+        <div class="card" image1-ref="image/Questionprompt/Q7.jpg" image2-ref="image/Answerprompt/A7.jpg"data-framework="+200" Qtime=10 data-answer="">
         </div>
-        <div class="card" image1-ref="image/Questionprompt/Q8.jpg" image2-ref="image/Answerprompt/A8.jpg"data-framework="+300" data-question="" data-answer="">
+        <div class="card" image1-ref="image/Questionprompt/Q8.jpg" image2-ref="image/Answerprompt/A8.jpg"data-framework="+300" Qtime=30 data-answer="">
         </div>
-        <div class="card" image1-ref="image/Questionprompt/Q9.jpg" image2-ref="image/Answerprompt/A9.jpg"data-framework="+350" data-question="" data-answer="">
+        <div class="card" image1-ref="image/Questionprompt/Q9.jpg" image2-ref="image/Answerprompt/A9.jpg"data-framework="+350" Qtime=30 data-answer="">
         </div>
-        <div class="card" image1-ref="image/Questionprompt/Q1.jpg" image2-ref="image/Answerprompt/A1.jpg"data-framework="+50" data-question="What is the name of the company discussed today?" data-answer="Sony">
-        </div>
+        <!-- reset image size -->
+        <div class="card" image1-ref="image/Questionprompt/Q10.jpg" image2-ref="image/Answerprompt/A10.jpg"data-framework="+50" Qtime=10 data-answer="">
+        </div> 
+        
     </div>
     
     <!-- Control buttons -->
@@ -50,19 +55,34 @@
         <button id="showQuestionBtn">See Question</button>
     </div>
 
+
     <!-- Removed cards section -->
     <div id="removedCards" class="removed-cards">
         <h2>Removed Cards</h2>
         <div id="removedCardsContainer"></div>
     </div>
 
+    </div>
+    <div id="musicController">
+        <button id="soundtrack1">soundtrack1</button>
+        <button id="soundtrack2">soundtrack2</button>
+    </div>
+
+    </div>
     <!-- Modal for displaying card question -->
     <div id="questionModal" class="modal hidden">
         <div class="modal-content">
+            <div id="promptInfo">
             <span id="closeQuestionModal" class="close">&times;</span>
             <h2>Question</h2>
+            </div>
+            <div class="countdown-container">
+                <h1 id="countdown">00:10</h1>
+            </div>
             <p id="questionText"></p>
+            <div id="imgContainer">
             <img id="questionImage" class="hidden-image" alt="Question Image">
+            </div>
             <button id="showAnswerBtn">Show Answer</button> <!-- Moved here -->
         </div>
     </div>
@@ -70,8 +90,10 @@
     <!-- Modal for displaying card answer -->
     <div id="answerModal" class="modal hidden">
         <div class="modal-content">
+            <div id="AnswerPromptInfo">
             <span id="closeAnswerModal" class="close">&times;</span>
             <h2>Reference Answer</h2>
+            </div>
             <p id="answerText"></p>
             <img id="answerImage" class="hidden-image" alt="Answer Image">
         </div>
