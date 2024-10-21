@@ -94,17 +94,17 @@ function showQuestion() {
         if(Qtime == 5){
             updateTimeText("0:05");
             startCountdown(Qtime);
-            playMusicFor5Seconds("Backgroundmusic/5sec.m4A");
+            playMusicFor5Seconds("Backgroundmusic/5sec.m4a");
             console.log("5sec");}
         if(Qtime == 10){
             updateTimeText("0:10");
             startCountdown(Qtime);
-            playMusicFor10Seconds("Backgroundmusic/10sec.m4A");
+            playMusicFor10Seconds("Backgroundmusic/10sec.m4a");
             console.log("10sec");}
         if(Qtime == 30){
             updateTimeText("0:30");
             startCountdown(Qtime);
-            playMusicFor30Seconds("Backgroundmusic/30sec.m4A");
+            playMusicFor30Seconds("Backgroundmusic/30sec.m4a");
             console.log("30sec")}
         if (imageRef) { // Check if there's an image reference
             questionImage.src = imageRef; // Set the image source based on the attribute
@@ -142,7 +142,7 @@ closeQuestionModal.addEventListener('click', () => {
     stopMusic();
     clearInterval(intervalOfQuestion);
     const currentMusic = music.getAttribute("currentMusic");
-    if(currentMusic == 1)playMusicLoop("Backgroundmusic/Card.M4A");
+    if(currentMusic == 1)playMusicLoop("Backgroundmusic/Card.m4a");
     if(currentMusic == 2)playMusicLoop("Backgroundmusic/Crazy Frog - Axel F [No Copyright].mp3");
     questionModal.classList.remove('show');
 });
@@ -263,7 +263,7 @@ showAnswerBtn.addEventListener('click', showAnswer);
 
 soundtrack1.addEventListener('click', function() {
     music.setAttribute('currentMusic','1');
-    playMusic("Backgroundmusic/Card.M4A");
+    playMusic("Backgroundmusic/Card.m4a");
 });
 soundtrack2.addEventListener('click', function() {
     music.setAttribute('currentMusic','2');
