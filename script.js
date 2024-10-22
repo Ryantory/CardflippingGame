@@ -126,7 +126,7 @@ function showAnswer() {
         answerModal.classList.add('show'); // Add 'show' class to display the modal
 
         stopMusic();
-        playMusicFor10Seconds("Backgroundmusic/SUPER MARIO BROS. Themesong ( No Copyright Music ).mp3");
+        playMusicFor10Seconds("Backgroundmusic/SUPER MARIO BROS. Themesong ( No Copyright Music ).m4a");
         if (imageRef) { // Check if there's an image reference
             answerImage.src = imageRef; // Set the image source based on the attribute
             answerImage.classList.remove('hidden-image'); // Make the image visible
